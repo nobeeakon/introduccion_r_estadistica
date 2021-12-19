@@ -1,0 +1,3 @@
+continuar <- function(){
+  return("continue")
+}

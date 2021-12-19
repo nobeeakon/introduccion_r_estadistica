@@ -1,0 +1,356 @@
+- Class: meta
+  Course: curso_introduccion_r_stats
+  Lesson: 0_intro
+  Author: Daniel T.
+  Type: Standard
+  Organization: Daniel T.
+  Version: 2.4.5
+
+- Class: text
+  Output: 
+     Bienvenido.
+     
+     Este es el primer tutorial que vamos a hacer en R. 
+
+
+    (sin acentos, para evitar posibles problemas...)
+
+- Class: text
+  Output: 
+    Una NOTA sobre los ejercicios. 
+    
+    
+    Te pido que no copies y pegues, sino que lo escribas todo tu solito, esto te va a ayudar a afianzar las ideas y a recordar.
+
+
+- Class: cmd_question
+  Output: Vamos a empezar por un clasico de clasicos, el famoso "Hola mundo". Escribe, por favor print("hola mundo")
+  CorrectAnswer: print("hola mundo")
+  AnswerTests: omnitest(correctExpr='print("hola mundo")')
+  Hint: Escribelo tal y como lo ves. Recuerda no copiar y pegar
+
+
+
+
+- Class: text
+  Output: 
+    Veamos un poco que paso aqui. 
+    
+    
+    Tenemos un comando (una instruccion) que se llama `print`, para poder ejecutarlo necesitamos escribirlo con parentesis (`print()`). Este comando le pasamos una palabra(s) escrita entre comillas (`print("hola mundo")`).
+
+
+    Si es la primera vez que usas R, o que usas un lenguaje de programacion, es importante que dediques unos segundos a revisar esta primer idea. Como veras mas adelante, asi funciona todo dentro de R, asi que una vez que quede claro esto, estaremos un paso adelante.
+
+
+- Class: cmd_question
+  Output: Probemos otro comando mas interesante. Prueba escribir sum(1,2,3,4). ¿Antes de escribirlo, que te imaginas que hace el comando?
+  CorrectAnswer: sum(1,2,3,4)
+  AnswerTests: omnitest(correctExpr='sum(1,2,3,4)')
+  Hint: Escribelo tal y como lo ves. Recuerda no copiar y pegar
+
+
+
+- Class: text
+  Output: 
+    Operaciones
+    
+    
+    Vamos a empezar con algunas operaciones basicas, las famosas sumas, restas, etc. Dentro de R, se usan los simbolos `+` para sumar, `-` para restar, `*` para multiplicar, `/` para dividir.
+
+    
+    Escribe, por ejemplo 2+2
+    
+    
+  CorrectAnswer: 2+2
+  AnswerTests: omnitest(correctExpr='2+2')
+
+- Class: cmd_question
+  Output: 
+    Antes de pasar a lo siguiente, juega un poco con estas ideas. Escribe algunos comandos de sumas, restas, multiplicaciones y divisiones, etc. 
+    
+    
+    Por ejemplo, reescribe la suma 2+2 usando el comando sum.
+    
+    
+    Dedica un breve tiempo a hacerte una buena idea de lo que esta pasando.
+
+
+    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe 1 para continuar
+  CorrectAnswer: 1
+  AnswerTests: omnitest(correctVal=1)
+
+
+
+- Class: text
+  Output: 
+    Variables
+
+    
+    Avancemos...
+
+    
+    Lee rapido lo siguiente y haz el ejercicio, despues regresa a esta explicacion. 
+    
+    
+    En R, podemos usar variables. 
+    En terminos simples, una variable es un nombre que le damos a un pedazo de informacion. 
+    Las usamos para guardar un valor o una serie de valores, asignandoles un nombre. 
+    
+    
+    En R, usamos el simbolo `<-` (parece una flechita, lo haces con un "mayor que" `<`, y un guion `-`) para guardar una variable.
+    Este seria el codigo,   x <- 3
+    
+    
+    Veamos un ejemplo, `a <- 3`. Veamos dos maneras de entender lo que significa.
+
+
+    -   Creamos la variable `a`, que va a guardar al numero 3.
+    
+    
+    -   `a` es igual a `3`
+
+
+- Class: exact_question
+  Output:
+     - Ejercicio mental
+     
+     
+      ¿Cuanto vale la siguiente operacion?  
+      
+      
+      a <- 9
+      
+      
+      a - 3
+
+  CorrectAnswer: 6
+  AnswerTests: omnitest(correctVal=6)
+  Hint: Es una resta
+
+- Class: exact_question
+  Output:
+     - Ejercicio mental
+     
+     
+      ¿Cuanto vale la siguiente operacion?  
+      
+      
+      a <- 9
+      
+      
+      b <- 10
+      
+      
+      (a - 2) * b
+
+  CorrectAnswer: 70
+  AnswerTests: omnitest(correctVal=70)
+  Hint: Son dos operaciones
+    
+   
+- Class: text
+  Output: 
+    Como seguramente ya identificaste, el lado izquierdo de la flecha va a ser nuestra "variable", y el lado derecho la informacion que va a guardar. 
+    En estos ejemplos solamente estamos usando numeros, pero una variable puede guardar toda una base de datos.
+
+
+
+- Class: cmd_question
+  Output: Haz una variable que se llame variable_1, que valga 12. (Ej x <- 12)
+  CorrectAnswer: x <- 12
+  AnswerTests: omnitest(correctExpr='x <- 12')
+  
+
+- Class: text
+  Output: 
+    Vamos a hacer un ejercicio con esto ...
+
+- Class: cmd_question
+  Output: Haz una variable que se llame variable_1, que valga 12. (Ej x <- 12)
+  CorrectAnswer: variable_1 <- 12
+  AnswerTests: omnitest(correctExpr='variable_1 <- 12')
+  
+- Class: cmd_question
+  Output: Haz una variable que se llame variable_2, que valga 22.
+  CorrectAnswer: variable_2 <- 22
+  AnswerTests: omnitest(correctExpr='variable_2 <- 22')
+  
+- Class: cmd_question
+  Output: Haz una variable que se llame variable_3, que valga 10
+  CorrectAnswer: variable_3 <- 10
+  AnswerTests: omnitest(correctExpr='variable_3 <- 10')  
+
+
+- Class: exact_question
+  Output:
+      Ya tenemos nuestros datos, ahora...
+      
+      
+      ¿Cuanto vale la siguiente operacion?  
+      tres variable_1, mas dos variable_2, menos cuatro variable_3. Dicho de otra manera, 3 por variable_1, mas 2 por variable_2, menos 4 por variable_3
+      
+  CorrectAnswer: 120
+  AnswerTests: omnitest(correctVal=120)
+  Hint: Son sumas y multiplicaciones. Puedes usar parentesis para juntar operaciones, ej. (99 + variable). Trata de hacerlo en una sola linea. 
+
+
+- Class: text
+  Output: 
+    Vamos a hacer otro  ejercicio  ...
+
+
+- Class: cmd_question
+  Output: Haz una variable que se llame perro, que valga 4
+  CorrectAnswer: perro <- 4
+  AnswerTests: omnitest(correctExpr='perro <- 4')  
+
+
+- Class: cmd_question
+  Output: Haz una variable que se llame gato, que valga 7
+  CorrectAnswer: gato <- 7
+  AnswerTests: omnitest(correctExpr='gato <- 7')  
+
+
+- Class: cmd_question
+  Output:
+      Haz una variable que se llame perro y dale el valor de 4, 
+      
+      
+      Crea otra variable que se llame gato, que tiene un valor de 7 
+      
+      
+      Haz una tercer variable que se llame codorniz que sea igual a la suma de gato mas perro
+      
+  
+  CorrectAnswer: codorniz <-perro+gato
+  AnswerTests: omnitest(correctExpr='codorniz <-perro+gato')
+  Hint: Son sumas y multiplicaciones. Puedes usar parentesis para juntar operaciones, ej. (99 + variable).
+    
+
+
+
+- Class: cmd_question
+  Output: 
+    Antes de pasar a lo siguiente, juega un poco con estas ideas. 
+    Crea algunas variables, dales diferentes nombres, por ejemplo, prueba con mayusculas y minusculas y realiza algunas operaciones.
+    
+
+    Si nunca has usado algun lenguaje de programacion, es muy importante que te familiarices con estas ideas. 
+    Recuerda que no se trata de avanzar por avanzar, sino de comprender.
+    
+
+    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe 1 para continuar
+  CorrectAnswer: 1
+  AnswerTests: omnitest(correctVal=1)
+  hint: si quieres jugar un poco con R, escribe play(), para continuar escribe   1
+
+   
+- Class: text
+  Output: 
+    Poder trabajar con variables es algo sumamente poderoso.
+    
+    
+    Por lo pronto destaquemos algunas ideas del ejercicio
+
+
+         Las variables guardan informacion
+
+
+         Podemos darles casi cualquier nombre
+      
+      
+         Podemos operar directamente con las variables
+      
+      
+         Podemos crear variables a partir de otras 
+
+
+    Por favor, antes de continuar, dedica unos segundos a pensar sobre este asunto de las variables, 
+    trata de hacerte una idea de que es lo que hacen y hacer memoria sobre la manera en que se escriben (sintaxis).
+
+
+- Class: text
+  Output: 
+    ## Instalar paquetes
+
+
+    R tiene muchas cosas ya cargadas, pero podemos descargar aun mas ("https://cran.r-project.org/web/packages/available_packages_by_name.html"). Es muuy sencillo. 
+
+
+    En RStudio, en el panel derecho, ve a la pestaña  "Packages", da click en "Install". Instala el 
+    paquete Tidyverse. Lo vamos a necesitar despues, asi que que mejor.
+
+- Class: text
+  Output: 
+    ## Donde obtener ayuda 1
+    
+
+    R, tiene muchas opciones, mucha funcionalidad. Mas de la que vas a necesitar. Mucha mas de la que podras recordar.
+
+    
+    Como te habras dado cuenta, todo es con comandos. Algunas veces, surge la duda ¿me tengo que aprender todos los comandos para poder usarlo? 
+    NO, con que entiendas a grandes rasgos como funciona el tema de los comandos (quiero decir, como se escribe en R, o sea, la sintaxis del lenguaje) y donde buscar ayuda ya estaras en el camino correcto. 
+
+
+- Class: cmd_question
+  Output: 
+    Antes de explicarte como conseguir ayuda, vamos a probar el siguiente ejercicio
+    
+    
+    Obten la raiz cuadrada de 999. (No es necesario que crees una variable)  
+    
+        
+  CorrectAnswer: sqrt(999)
+  AnswerTests: omnitest(correctExpr='sqrt(999)')
+  Hint: ¿Quizas internet tenga la respuesta?, ¿cual es el comando?
+
+- Class: text
+  Output: 
+    Donde obtener ayuda 2
+
+    
+    Para obtener ayuda en R, hay algunas opciones, las ordeno en funcion de como yo las utilizo en la practica
+
+
+      Google (u tu buscador de preferencia), lo mas obvio, buscar "R obtener media", o, mas probablemente en ingles, "R mean". Un truco simple pero efectivo... Muy probablemente alguien ya tuvo tu duda.
+     
+     
+      Documentacion de R, en RStudio, en el panel derecho hay una pestaña que dice "help", aqui puedes buscar palabras clave. Ojo, solo en ingles. Tambien, algunos paquetes tienen tutoriales ("vignettes"). Util cuando tienes una duda particular de algun comando. Algo interesante es que hasta abajo normalmente hay ejemplos, que podemos copiar, y pegar para ver como se ejecutan (corren) los comandos.
+     
+     
+      Listas de correos ("https://www.r-project.org/mail.html") puedes mandar un correo esa lista de correos y alguien seguramente te respondera. Sirve sobre todo cuando tienes una duda conceptual o mas profunda y cuando ya buscaste en los dos puntos anteriores.
+
+
+
+- Class: text
+  Output: 
+    Recapitulemos
+    
+    
+    Uff, vimos muchas cosas ahora. Se que puede ser un poco abrumador, pero necesitabamos dar ese recorrido rapido. Poco a poco te iras familiarizando con el programa, no te preocupes.
+    
+    
+    Algunas cosas que platicamos
+    
+    
+       Comandos, que son y una idea de la sintaxis fundamental (como escribir en R)
+    
+    
+       Variables, que son y como se escriben
+     
+     
+       Instalar paquetes, como instalarlos y asi extender la funcionalidad de R
+     
+     
+       Obtener ayuda, donde buscar ayuda
+
+    
+    ¿Que sigue?
+    
+    
+    Ahora, te recomiendo hacer los ejercicios adicionales. Por ahora hemos ido de la mano, revisando cosas, en los ejercicios adicionales 
+    tendras mas libertad y eso te dara la experiencia necesaria para poder hacer las cosas por cuenta propia mas adelante. Recuerda que no
+    se trata de avanzar por avanzar, sino de aprender.
+
+    

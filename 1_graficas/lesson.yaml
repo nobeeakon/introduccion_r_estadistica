@@ -1,0 +1,331 @@
+- Class: meta
+  Course: curso_introduccion_r_stats
+  Lesson: 1-graficas
+  Author: Daniel T.
+  Type: Standard
+  Organization: Daniel T.
+  Version: 2.4.5
+
+
+
+- Class: text
+  Output: 
+     Bienvenido.
+     
+     En esta sesion vamos a ver algunas graficas
+
+
+    (sin acentos y sin dos puntos, para evitar posibles problemas...)
+
+
+
+- Class: text
+  Output: 
+    NOTA,
+    
+    
+    Al instalar un paquete, quizas veas el siguiente mensaje "WARNING Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding"
+    . No deberia de ser un problema.    
+
+
+- Class: text
+  Output: 
+    Una NOTA sobre los ejercicios. 
+    
+    
+    Te pido que NO copies y pegues. Tambien, recuerda que es importante que juegues un poco por tu cuenta, si estas en la 
+    sesion y necesitas parar un momento para probar algunos comandos, teclea play(); para retomar teclea nxt()
+
+
+
+- Class: cmd_question
+  Output: 
+    Primero vamos a instalar un paquete que vamos a necesitar mas adelante. El paquete se llama ggplot2, puedes instalarlo desde 
+    la pestaña "Packages", por ahora vamos a instalarlo usando comandos. 
+    
+    
+    Teclea el siguiente comando install.packages("ggplot2")
+  CorrectAnswer: install.packages("ggplot2")
+  AnswerTests: omnitest(correctExpr='install.packages("ggplot2")')
+  Hint: Escribelo tal y como lo ves. Recuerda no copiar y pegar
+
+- Class: text
+  Output: 
+    Veamos ahora algunas graficas...
+    
+- Class: text
+  Output: 
+    ... pero, primero necesitamos algunos datos y saber como manipularlos. 
+    
+    Ademas, es algo que necesitaremos hacer en el dia a dia...
+    
+- Class: cmd_question
+  Output: 
+    He cargado algunos datos por ti...
+    
+    
+    Los datos estan guardados en una variable que se llama peso.
+    
+    
+    Para poder verlos, teclea el nombre de la variable, o sea, peso
+  CorrectAnswer: peso
+  AnswerTests: omnitest(correctExpr='peso')
+  Hint: En serio, solo escribe peso
+  
+- Class: cmd_question
+  Output: 
+    Tambien podemos verlos en forma de tablita
+    
+    
+    Escribe el siguiente comando, View(peso)
+  CorrectAnswer: View(peso)
+  AnswerTests: omnitest(correctExpr='View(peso)')
+  Hint: Escribelo tal y como esta
+
+- Class: cmd_question
+  Output: 
+    Te habras dado cuenta de que es una tablita de datos (renglones y columnas). Ademas, las columnas tienen nombre
+    
+    
+    Para checar como se llaman las columnas, vamos a escribir el comando, names(peso)
+  CorrectAnswer: names(peso)
+  AnswerTests: omnitest(correctExpr='names(peso)')
+  Hint: Escribelo tal y como esta
+  
+
+- Class: cmd_question
+  Output: 
+    Para ver solamente los datos de una columna, usaremos el simbolo "$", de la siguiente manera "nombre_de_nuestros_datos$nombre_de_la_columna". 
+    
+    
+    Por ejemplo, para los datos de altura. Escribe el siguiente comando, peso$altura
+  CorrectAnswer: peso$altura
+  AnswerTests: omnitest(correctExpr='peso$altura')
+  Hint: Escribelo tal y como esta
+  
+  
+  
+
+- Class: cmd_question
+  Output: 
+    Prueba ahora con los datos de la columna peso
+  CorrectAnswer: peso$peso
+  AnswerTests: omnitest(correctExpr='peso$peso')
+  Hint: Recuerda la sintaxis
+  
+     
+- Class: text
+  Output: 
+     Por el momento hemos trabajado con datos que ya estaban cargados. 
+     
+     
+     Cargar datos a R con RStudio es muy sencillo. En el panel superior derecho hay una pestaña que se 
+     llama "Environment" (o Ambiente), ahi hay una opcion que dice "Import Dataset" que te da varias opciones. 
+     
+        
+- Class: cmd_question
+  Output: 
+     Para este ejercicio para momentaneamente la sesion (escribe play()  ),  y cuando hayas acabado teclea nxt() para continuar la leccion. 
+     
+     
+     Descarga el siguiente archivo, ..................
+     
+     
+     Ve a la pestaña "Environment" y da click en la opcion "Import Dataset", selecciona "From text (readr)" y sigue las instrucciones. 
+     
+     
+     Al hacer la importacion, fijate que la tablita se vea de manera correcta y revisa las "Import Options". En particular pon atencion a "Name", que es 
+     el nombre que va a tener la variable en donde se guarden los datos.
+     
+     
+     Juega un poco con estos datos, por ejemplo, obten los nombres, los valores de las columnas, etc.
+      
+      
+     Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe "continuar", para continuar
+  CorrectAnswer: "continuar"
+  AnswerTests: omnitest(correctVal="continuar")
+  Hint: Para jugar escribe play(), para regresar a la sesion escribe nxt(). Cuando hayas terminado escribe "continuar" (con comillas)
+
+- Class: video
+  Output: 
+    Como dato extra, esto tambien se puede hacer con codigo. Pero, normalmente es mas comodo simplemente hacerlo con RStudio y que nos genere el codigo.
+  
+  
+    Te dejo un video para que lo cheques ("https://www.youtube.com/watch?v=uLcmAT7ODF4"). 
+    
+    
+    NOTA, Muy probablemente te va a aparecer una pregunta de Si o No, para ver si quieres abrirlo.
+  VideoLink: https://www.youtube.com/watch?v=uLcmAT7ODF4
+     
+- Class: text
+  Output: 
+     Finalmente, a las graficas...
+     
+- Class: cmd_question
+  Output: 
+      Vamos a hacer una grafica de dispersion.
+  
+      Escribe, plot(peso$peso, peso$altura)
+  CorrectAnswer: plot(peso$peso, peso$altura)
+  AnswerTests: omnitest(correctExpr='plot(peso$peso, peso$altura)')
+  Hint: Escribelo tal y como lo ves. Recuerda no copiar y pegar
+
+     
+- Class: text
+  Output: 
+     Seguro notaste el uso del simbolo "$". Detente un segundo para revisar que entiendas bien que paso en este comando.
+     
+     
+     Tambien te recomiendo checar rapido la documentacion... "https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot". 
+     Ojo, ir entendiendo como funciona la documentacion te va a permitir resolver problemas futuros, de verdad echale una checada rapida.
+     
+- Class: video
+  Output: 
+      Veamos ahora como hacer un histograma
+      
+      
+      Para estar todos en la misma sintonia, primero un breve repaso de ¿que es un histograma?
+      
+      
+      "https://www.youtube.com/watch?v=P0_AEWWpyoM"
+      
+      
+      NOTA, Muy probablemente te va a aparecer una pregunta de Si o No, para ver si quieres abrirlo.
+  VideoLink: https://www.youtube.com/watch?v=P0_AEWWpyoM
+
+
+- Class: cmd_question
+  Output: 
+      Ahora al codigo...
+      
+      
+      Escribe hist(peso$peso)
+  
+  CorrectAnswer: hist(peso$peso)
+  AnswerTests: omnitest(correctExpr='hist(peso$peso)')
+  Hint: Escribelo tal y como lo ves. Recuerda no copiar y pegar
+
+
+- Class: cmd_question
+  Output: 
+    Habiamos hecho la grafica de dispersion donde en el eje X (horizontal) estaba el peso y en el eje Y (vertical) la altura.
+    
+    
+    
+    Ahora has la grafica en donde el eje Y tenga el peso y el eje X tenga la altura
+  
+    
+    Checa la documentacion si tienes duda "https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/plot"
+      
+  CorrectAnswer: plot(peso$altura, peso$peso)
+  AnswerTests: omnitest(correctExpr='plot(peso$altura, peso$peso)')
+  Hint: Recuerda la sintaxis. Inspirate en las respuestas anteriores.
+
+
+
+- Class: cmd_question
+  Output: 
+    Habiamos hecho el histograma para el peso. 
+    
+    
+    Has ahora el histograma para la altura.
+    
+    
+    Checa la documentacion si tienes duda "https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/hist"
+      
+  CorrectAnswer: hist(peso$altura)
+  AnswerTests: omnitest(correctExpr='hist(peso$altura)')
+  Hint: Recuerda la sintaxis. Inspirate en las respuestas anteriores.
+
+
+
+- Class: text
+  Output: 
+     Ahora un mini repaso  ....
+  
+- Class: mult_question
+  Output: ¿el comando names() sirve para?
+  AnswerChoices: Obtener los nombres de las columnas;Obtener los nombres;Saber como se llaman los datos
+  CorrectAnswer: Obtener los nombres de las columnas
+  AnswerTests: omnitest(correctVal="Obtener los nombres de las columnas")
+  
+- Class: mult_question
+  Output: ¿el comando simbolo $ sirve para?
+  AnswerChoices: Obtener los valores de una columna;Obtener los nombres de las columnas;Ver nuestros datos
+  CorrectAnswer: "Obtener los valores de una columna"
+  AnswerTests: omnitest(correctVal="Obtener los valores de una columna")
+  
+- Class: text
+  Output: 
+     Estos comandos son importantes, quizas quieras anotarlos en algun lado
+     
+
+- Class: text
+  Output: 
+    Recordando lo leido en el email. 
+    Ahi hablabamos de la famosa gramatica de las graficas y que las graficas en general tenian un componente de Datos, otro de Geometria y uno mas de Estetica.
+   
+   
+    Antes de ver estos conceptos en accion (si no lo has leido, has una pausa y echale un ojo, o, si no estas inscrito al curso, ve a ...), detente un momento y 
+    trata de identificar estos tres componentes en las graficas que ya hicimos. 
+    
+    
+- Class: text
+  Output: 
+      En R, un paquete que implementa estas ideas teoricas es el paquete gglot2 (el que instalamos al inicio). 
+      
+      
+      En esta sesion vamos solamente a tocarlo con brevedad, pero mas adelante lo vamos a usar mas. 
+  
+
+- Class: cmd_question
+  Output: Ya tenemos instalado nuestro paquete, ahora, para poder usarlo necesitamos "llamarlo". Para esto, escribe el comando library("ggplot2")
+  CorrectAnswer: library("ggplot2")
+  AnswerTests: omnitest(correctExpr='library("ggplot2")')
+  Hint: Escribelo tal y como lo ves
+  
+
+- Class: script
+  Output: 
+      Esta vez te he preparado un pequeño script (archivo de texto con los comandos) para que revisemos como funciona esto.
+      Cuando hayas terminado, por favor escribe   submit()
+  
+  AnswerTests: script_continue_test()
+  Hint: Juega un rato. Cuando termines, escribe submit() en la Consola ("Console")
+  Script: ggplot2_1.R
+
+   
+    
+- Class: text
+  Output: 
+     Recapitulando. Vimos lo siguiente,
+     
+     
+     Como cargar datos a R
+     
+     
+     Como manipular una tabla de datos, visualizar la tabla y llamar a las columnas
+     
+     
+     Como hacer algunas graficas, en particular el histograma y la grafica de dispersion
+     
+     
+     Empezamos a usar el paquete ggplot2
+  
+- Class: text
+  Output: 
+      Por favor recuerda hacer los ejercicios complementarios, que vas a 
+      encontrar en ....
+      
+      
+      Aqui todo ha sido guiado, en los ejercicios complementarios son sin tanta ayuda y 
+      te ayudaran a agarrar mas experiencia. 
+      
+    
+- Class: text
+  Output: 
+      Listo, es todo por ahora. 
+ 
+     
+     
+ 
