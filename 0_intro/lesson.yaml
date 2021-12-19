@@ -56,7 +56,8 @@
     Operaciones
     
     
-    Vamos a empezar con algunas operaciones basicas, las famosas sumas, restas, etc. Dentro de R, se usan los simbolos `+` para sumar, `-` para restar, `*` para multiplicar, `/` para dividir.
+    Vamos a empezar con algunas operaciones basicas, las famosas sumas, restas, etc. Dentro de R, 
+    se usan los simbolos `+` para sumar, `-` para restar, `*` para multiplicar, `/` para dividir, y `^` para hacer la potencia (2 ^ 2 es dos al cuadrado)
 
     
     Escribe, por ejemplo 2+2
@@ -76,9 +77,9 @@
     Dedica un breve tiempo a hacerte una buena idea de lo que esta pasando.
 
 
-    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe 1 para continuar
-  CorrectAnswer: 1
-  AnswerTests: omnitest(correctVal=1)
+    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe "continuar" para continuar
+  CorrectAnswer: "continuar"
+  AnswerTests: omnitest(correctVal="continuar")
 
 
 
@@ -102,7 +103,7 @@
     Este seria el codigo,   x <- 3
     
     
-    Veamos un ejemplo, `a <- 3`. Veamos dos maneras de entender lo que significa.
+    Por ejemplo, `a <- 3` lo podemos entender de estas dos maneras
 
 
     -   Creamos la variable `a`, que va a guardar al numero 3.
@@ -214,17 +215,11 @@
 
 - Class: cmd_question
   Output:
-      Haz una variable que se llame perro y dale el valor de 4, 
-      
-      
-      Crea otra variable que se llame gato, que tiene un valor de 7 
-      
-      
-      Haz una tercer variable que se llame codorniz que sea igual a la suma de gato mas perro
+      Haz otra variable que se llame codorniz que sea igual a la suma de gato mas perro
       
   
   CorrectAnswer: codorniz <-perro+gato
-  AnswerTests: omnitest(correctExpr='codorniz <-perro+gato')
+  AnswerTests: omnitest(correctExpr='codorniz <- perro+gato')
   Hint: Son sumas y multiplicaciones. Puedes usar parentesis para juntar operaciones, ej. (99 + variable).
     
 
@@ -240,10 +235,10 @@
     Recuerda que no se trata de avanzar por avanzar, sino de comprender.
     
 
-    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe 1 para continuar
-  CorrectAnswer: 1
-  AnswerTests: omnitest(correctVal=1)
-  hint: si quieres jugar un poco con R, escribe play(), para continuar escribe   1
+    Escribe el comando play() para parar momentaneamente la sesion. Ya que hayas jugado un poco, escribe  nxt() para retomar y luego escribe "continuar" para continuar
+  CorrectAnswer: "continuar"
+  AnswerTests: omnitest(correctVal="continuar")
+  hint: si quieres jugar un poco con R, escribe play(), para continuar escribe  "continuar"
 
    
 - Class: text
@@ -279,7 +274,7 @@
 
 
     En RStudio, en el panel derecho, ve a la pestaña  "Packages", da click en "Install". Instala el 
-    paquete Tidyverse. Lo vamos a necesitar despues, asi que que mejor.
+    paquete Tidyverse. Lo vamos a necesitar despues...
 
 - Class: text
   Output: 
@@ -290,7 +285,8 @@
 
     
     Como te habras dado cuenta, todo es con comandos. Algunas veces, surge la duda ¿me tengo que aprender todos los comandos para poder usarlo? 
-    NO, con que entiendas a grandes rasgos como funciona el tema de los comandos (quiero decir, como se escribe en R, o sea, la sintaxis del lenguaje) y donde buscar ayuda ya estaras en el camino correcto. 
+    NO, con que entiendas a grandes rasgos como funciona el tema de los comandos (quiero decir, como se escribe en R, o sea, la sintaxis del 
+    lenguaje) y donde buscar ayuda ya estaras en el camino correcto. 
 
 
 - Class: cmd_question
@@ -298,7 +294,7 @@
     Antes de explicarte como conseguir ayuda, vamos a probar el siguiente ejercicio
     
     
-    Obten la raiz cuadrada de 999. (No es necesario que crees una variable)  
+    Obten la raiz cuadrada de 999. (No crees una variable)  
     
         
   CorrectAnswer: sqrt(999)
@@ -316,10 +312,12 @@
       Google (u tu buscador de preferencia), lo mas obvio, buscar "R obtener media", o, mas probablemente en ingles, "R mean". Un truco simple pero efectivo... Muy probablemente alguien ya tuvo tu duda.
      
      
-      Documentacion de R, en RStudio, en el panel derecho hay una pestaña que dice "help", aqui puedes buscar palabras clave. Ojo, solo en ingles. Tambien, algunos paquetes tienen tutoriales ("vignettes"). Util cuando tienes una duda particular de algun comando. Algo interesante es que hasta abajo normalmente hay ejemplos, que podemos copiar, y pegar para ver como se ejecutan (corren) los comandos.
+      Documentacion de R, en RStudio, en el panel derecho hay una pestaña que dice "help", aqui puedes buscar palabras clave. Ojo, solo en ingles. Tambien, algunos paquetes tienen tutoriales ("vignettes"). Util cuando tienes una duda particular de algun comando.
+      Algo interesante es que hasta abajo normalmente hay ejemplos, que podemos copiar, y pegar para ver como se ejecutan (corren) los comandos.
      
      
-      Listas de correos ("https://www.r-project.org/mail.html") puedes mandar un correo esa lista de correos y alguien seguramente te respondera. Sirve sobre todo cuando tienes una duda conceptual o mas profunda y cuando ya buscaste en los dos puntos anteriores.
+      Listas de correos ("https://www.r-project.org/mail.html") puedes mandar un correo esa lista de correos y alguien seguramente te respondera. 
+      Sirve sobre todo cuando tienes una duda conceptual o mas profunda y cuando ya buscaste en los dos puntos anteriores.
 
 
 
@@ -346,11 +344,17 @@
        Obtener ayuda, donde buscar ayuda
 
     
+- Class: text
+  Output: 
     ¿Que sigue?
     
     
     Ahora, te recomiendo hacer los ejercicios adicionales. Por ahora hemos ido de la mano, revisando cosas, en los ejercicios adicionales 
+    ("https://github.com/nobeeakon/r_cursito_ejercicios_adicionales/blob/main/ejercicios/intro/sesion_ejs.pdf")
     tendras mas libertad y eso te dara la experiencia necesaria para poder hacer las cosas por cuenta propia mas adelante. Recuerda que no
-    se trata de avanzar por avanzar, sino de aprender.
+    se trata de avanzar por avanzar, sino de aprender. He subido tambien las respuestas a los ejercicios ("https://github.com/nobeeakon/r_cursito_ejercicios_adicionales/blob/main/ejercicios/intro/respuestas.R"),
+    por si en algun momento te atoras, o para que cuando termines puedas comparar tu codigo.
+    
+    
 
     
